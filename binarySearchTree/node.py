@@ -2,7 +2,7 @@
 # Author: Nicholas Norman (NPN)
 # Date: Apr 2024
 # Last Modified:
-#   NPN Apr 2024
+#   NPN May 2024
 # 
 # A basic node structure for the binary search tree
 ###
