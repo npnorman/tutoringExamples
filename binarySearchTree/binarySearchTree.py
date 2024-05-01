@@ -22,3 +22,20 @@ class BinarySearchTree:
     
     def setRoot(self, root:Node):
         self.root = root
+
+    #search
+
+    #insert
+    def insert(self, value:int = 0):
+        #insert this value into the tree
+        
+        #search for the values position
+        if (self.root == None):
+            #no root yet, this is my root
+            self.root = Node(value)
+        else:
+            pass
+            #create a node
+            #add to R or L
+
+    #delete
