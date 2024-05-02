@@ -71,6 +71,8 @@ for i in range(0, x+1):
 numbers.sort()
 
 #find the list
-n = 5
+n = input("input a number to search for 0-20: ")
+n = int(n)
 res = binarySearch(n, numbers)
 print(f"is {n} in the list?: {res}")
+print(f"should be completed in O(log2({len(numbers)})) = {math.ceil(math.log2(len(numbers)))} steps")
