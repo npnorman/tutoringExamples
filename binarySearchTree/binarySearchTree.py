@@ -130,18 +130,46 @@ class BinarySearchTree:
                 output = node.left
 
             #case 3: deleteing a node with 2 children
+            else:
+                #right and left are there, 2 children
+                #set the node to its successor (the node next in order), which is a leaf node
+
+                #find successor
+                successorParent = node #this makes it easier to delete
+                successor = node.right
+                current = node.right
+
+                #while there is a smaller value
+                while(current.left != None):
+                    #make current the smaller value
+                    successorParent = current
+                    current = current.left
+
+                    #make successor current
+                    successor = current
+
+                #make it the root
+                node.setValue(successor.getValue()) #replace the value
+                output = node
+
+                #delete the successor
+                if (successorParent.left == successor):
+                    #move root up the chain
+                    successorParent.left = successor.right
+
+                elif (successorParent.right == successor):
+                    #move root up the chain
+                    successorParent.right = successor.right
 
         #if value is less
         elif (value < node.getValue()):
             #call function on subtree
-            print("val,", node.getValue())
             node.left = self.delete(value, node.left)
             output = node
 
         #if value is greater than
         elif (value > node.getValue()):
             #call value on subtree
-            print("val,", node.getValue())
             node.right = self.delete(value, node.right)
             output = node
 
@@ -177,14 +205,16 @@ if __name__ == "__main__":
     tree.printTree(tree.root)
 
     #search for some numbers
-    print(tree.search(10, tree.root))
-    print(tree.search(3, tree.root))
-    print(tree.search(12, tree.root))
+    print("search for 10:", tree.search(10, tree.root))
+    print("search for 3:", tree.search(3, tree.root))
+    print("search for 12:", tree.search(12, tree.root))
 
     #delete some keys
-    #tree.delete(10, tree.root) #root (2 children)
+    print("deleting node 5")
+    tree.delete(5, tree.root) #root (2 children)
     #tree.delete(12, tree.root) #leaf node
     #tree.delete(15, tree.root) #1 child
+    #tree.delete(1, tree.root) #None
 
     #print the tree to view
     tree.printTree(tree.root)
