@@ -31,5 +31,6 @@ for pet in pets:
 petTree.printTree(petTree.root)
 
 #search for a pet
+print("")
 print("is spots in the tree?:", petTree.search(spots, petTree.root))
 print("is timmy in the tree?:", petTree.search(timmy, petTree.root))
