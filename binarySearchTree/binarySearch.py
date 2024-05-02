@@ -58,21 +58,22 @@ def binarySearch(value:int, arr:List[int]):
         
     return result
 
-#this is the list to search
-numbers = []
+if __name__ == "__main__":
+    #this is the list to search
+    numbers = []
 
-#lets add x numbers to it
-x = 20 #numbers to add
+    #lets add x numbers to it
+    x = 20 #numbers to add
 
-for i in range(0, x+1):
-    numbers.append(i)
+    for i in range(0, x+1):
+        numbers.append(i)
 
-#sort the list
-numbers.sort()
+    #sort the list
+    numbers.sort()
 
-#find the list
-n = input("input a number to search for 0-20: ")
-n = int(n)
-res = binarySearch(n, numbers)
-print(f"is {n} in the list?: {res}")
-print(f"should be completed in O(log2({len(numbers)})) = {math.ceil(math.log2(len(numbers)))} steps")
+    #find the list
+    n = input("input a number to search for 0-20: ")
+    n = int(n)
+    res = binarySearch(n, numbers)
+    print(f"is {n} in the list?: {res}")
+    print(f"should be completed in O(log2({len(numbers)})) = {math.ceil(math.log2(len(numbers)))} steps")
