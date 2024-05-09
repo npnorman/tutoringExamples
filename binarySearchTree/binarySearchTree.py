@@ -185,6 +185,36 @@ class BinarySearchTree:
                 self.printTree(node.left, level + 1, 'L-- ')
                 self.printTree(node.right, level + 1, 'R-- ')
 
+    ## Traversals
+    def inOrder(self, node:Node):
+        #left
+        if (node.left != None):
+            self.inOrder(node.left)
+        #self
+        print(node.getValue(), end=",")
+        #right
+        if (node.right != None):
+            self.inOrder(node.right)
+
+    def preOrder(self, node:Node):
+        #self
+        print(node.getValue(), end=",")
+        #left
+        if (node.left != None):
+            self.preOrder(node.left)
+        #right
+        if (node.right != None):
+            self.preOrder(node.right)
+
+    def postOrder(self, node:Node):
+        #left
+        if (node.left != None):
+            self.postOrder(node.left)
+        #right
+        if (node.right != None):
+            self.postOrder(node.right)
+        #self
+        print(node.getValue(), end=",")
 
 if __name__ == "__main__":
     #test code
@@ -193,28 +223,38 @@ if __name__ == "__main__":
     tree = BinarySearchTree()
 
     #insert some numbers
-    tree.insert(10, tree.root)
-    tree.insert(5, tree.root)
-    tree.insert(15, tree.root)
+    tree.insert(4, tree.root)
     tree.insert(2, tree.root)
+    tree.insert(1, tree.root)
+    tree.insert(3, tree.root)
+    tree.insert(6, tree.root)
+    tree.insert(5, tree.root)
     tree.insert(7, tree.root)
-    tree.insert(12, tree.root)
-    tree.insert(11, tree.root)
 
     #print the tree to view
     tree.printTree(tree.root)
 
     #search for some numbers
-    print("search for 10:", tree.search(10, tree.root))
-    print("search for 3:", tree.search(3, tree.root))
-    print("search for 12:", tree.search(12, tree.root))
+    #print("search for 10:", tree.search(10, tree.root))
+    #print("search for 3:", tree.search(3, tree.root))
+    #print("search for 12:", tree.search(12, tree.root))
 
     #delete some keys
-    print("deleting node 5")
-    tree.delete(5, tree.root) #root (2 children)
+    #print("deleting node 5")
+    #tree.delete(5, tree.root) #root (2 children)
     #tree.delete(12, tree.root) #leaf node
     #tree.delete(15, tree.root) #1 child
     #tree.delete(1, tree.root) #None
 
     #print the tree to view
-    tree.printTree(tree.root)
+    #tree.printTree(tree.root)
+
+    print("")
+    print("In-order: ", end="")
+    tree.inOrder(tree.root)
+
+    print("\nPre-order: ", end="")
+    tree.preOrder(tree.root)
+
+    print("\nPost-order: ", end="")
+    tree.postOrder(tree.root)
