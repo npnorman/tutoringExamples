@@ -1,7 +1,7 @@
 # Nicholas Norman
 # 19 Sep 2024
 # conditions.py
-# Showcase how a condition evaluates and logic
+# Showcase how a condition evaluates
 
 #booleans
     #typically we start boolean statements with "is"
@@ -36,16 +36,3 @@ isNick = name == "Nick"
 
 print("\nString comparison:")
 print(f"{name} is equal to 'Nick'")
-
-#logic table (and, or, not)
-
-p = True
-q = False
-
-print(f"p={p} q={q}")
-print(f"p and q: {p and q}")
-print(f"p or q: {p or q}")
-print(f"not (p and q): {not (p and q)}")
-print(f"not (p or q): {not (p or q)}")
-print(f"note: this is not the same as")
-print(f"not p and q {not p and q}")
