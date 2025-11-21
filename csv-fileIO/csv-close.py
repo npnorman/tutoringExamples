@@ -32,4 +32,3 @@ with file:
 
     # we can continue to write the data
     writer.writerows(studentData)
-
